@@ -1,4 +1,3 @@
-
 // Updates the content of an HTML element with the id "range" based on the value of an input element with the id "count."
 function ranges() {
     var x = document.getElementById("count").value;
@@ -56,16 +55,46 @@ function selectAll(sll) {
 }
 
 // Retrieves a collection of DOM elements with the specified class name.
-function dom_class(clss) {
+   function dom_class(clss) {
     return document.getElementsByClassName(clss);
 }
 
 // Returns the length of the provided string or array.
-function len(ln) {
+   function len(ln) {
     return ln.length;
 }
 
 // Navigates to the specified URL, effectively redirecting the page.
-function open(rdc) {
+   function open(rdc) {
     return window.location.href = rdc;
+ 
+}
+//  host ip Address Coded by Usman Alibaba
+
+
+
+function host_ip(domain, callback) {
+  fetch("https://perfectionistic-own.000webhostapp.com/index.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: "text=" + domain,
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('There was a problem with the request.');
+    }
+    return response.text();
+  })
+  .then(ip => {
+    if (callback && typeof callback === 'function') {
+      callback(null, ip);
+    }
+  })
+  .catch(error => {
+    if (callback && typeof callback === 'function') {
+      callback(error, null);
+    }
+  });
 }
