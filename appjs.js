@@ -70,14 +70,6 @@ function open(rdc) {
 
 }
 
-// dom using Class Dom
-
-function dom_class(dmcl) {
-
-    return document.getElementsByClassName(dmcl);
-
-}
-
 // Add data device  storage as database
 
 function set_item(kye, Vlu) {
