@@ -55,46 +55,83 @@ function selectAll(sll) {
 }
 
 // Retrieves a collection of DOM elements with the specified class name.
-   function dom_class(clss) {
-    return document.getElementsByClassName(clss);
+function dom_class(clssssss) {
+    return document.getElementsByClassName(clssssss);
 }
 
 // Returns the length of the provided string or array.
-   function len(ln) {
+function len(ln) {
     return ln.length;
 }
 
 // Navigates to the specified URL, effectively redirecting the page.
-   function open(rdc) {
+function open(rdc) {
     return window.location.href = rdc;
- 
+
 }
+
+// dom using Class Dom
+
+function dom_class(dmcl) {
+
+    return document.getElementsByClassName(dmcl);
+
+}
+
+// Add data device  storage as database
+
+function set_item(kye, Vlu) {
+  return window.localStorage.setItem(kye, Vlu);
+}
+
+// get Stored item from device
+
+function get_item(itm){
+  return window.localStorage.getItem(itm);
+    
+}
+// Throw Erro message if Something went Wrong
+function error_msg(err = "Try again Something Went Wrong") {
+  document.write(err);
+}
+
+
+
+
 //  host ip Address Coded by Usman Alibaba
 
 
-
 function host_ip(domain, callback) {
-  fetch("https://perfectionistic-own.000webhostapp.com/index.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "text=" + domain,
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('There was a problem with the request.');
-    }
-    return response.text();
-  })
-  .then(ip => {
-    if (callback && typeof callback === 'function') {
-      callback(null, ip);
-    }
-  })
-  .catch(error => {
-    if (callback && typeof callback === 'function') {
-      callback(error, null);
-    }
-  });
+    fetch("https://perfectionistic-own.000webhostapp.com/index.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: "text=" + domain,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('There was a problem with the request.');
+            }
+            return response.text();
+        })
+        .then(ip => {
+            if (callback && typeof callback === 'function') {
+                callback(null, ip);
+            }
+        })
+        .catch(error => {
+            if (callback && typeof callback === 'function') {
+                callback(error, null);
+            }
+        });
 }
+
+
+function erro_msg(msg) {
+return msg = "something";
+
+document.write(msg)
+
+}
+
