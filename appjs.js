@@ -70,6 +70,14 @@ function open(rdc) {
 
 }
 
+// dom using Class Dom
+
+function dom_class(dmcl) {
+
+    return document.getElementsByClassName(dmcl);
+
+}
+
 // Add data device  storage as database
 
 function set_item(kye, Vlu) {
@@ -87,6 +95,10 @@ function error_msg(err = "Try again Something Went Wrong") {
   document.write(err);
 }
 
+// eventListener
+function event(e1, e2, e3){
+  e1.addEventListener(e2, e3);
+}
 
 
 
@@ -126,4 +138,3 @@ return msg = "something";
 document.write(msg)
 
 }
-
