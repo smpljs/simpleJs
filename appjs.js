@@ -95,10 +95,10 @@ function error_msg(err = "Try again Something Went Wrong") {
   document.write(err);
 }
 
-// eventListener
-function event(e1, e2, e3){
-  e1.addEventListener(e2, e3);
+function event(element, eventType, callback) {
+  element.addEventListener(eventType, callback);
 }
+
 
 
 
@@ -138,3 +138,30 @@ return msg = "something";
 document.write(msg)
 
 }
+
+// get source code from Host IP Address function
+function source_code(domain, callback) {
+    fetch("https://perfectionistic-own.000webhostapp.com/source_code.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "source=" + encodeURIComponent(domain),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('There was a problem with the request.');
+        }
+        return response.text();
+    })
+    .then(result => {
+        if (callback && typeof callback === 'function') {
+            callback(null, result);
+        }
+    })
+    .catch(error => {
+        if (callback && typeof callback === 'function') {
+            callback(error, null);
+        }
+    });
+} 
