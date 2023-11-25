@@ -1,8 +1,4 @@
-// Updates the content of an HTML element with the id "range" based on the value of an input element with the id "count."
-function ranges() {
-    var x = document.getElementById("count").value;
-    document.getElementById("range").innerHTML = x;
-}
+// Simplejs Library Coded by Usman Alibaba
 
 // Writes the specified string to the document using document.write().
 function Print(str) {
@@ -99,10 +95,62 @@ function event(element, eventType, callback) {
   element.addEventListener(eventType, callback);
 }
 
+// remove event
+function remove(elem, eventType, callback) {
+    elem.removeEventListener(eventType, callback);
+}
 
 
+ 
+// get langueg in HTML DOC
+function dom_lang(lng = "lang") {
+  return document.documentElement.getAttribute(lng);
+
+}
+
+// Check if Network is Available
+
+function status(onln = navigator.onLine){
+return navigator.onLine;
+}
+
+// return user Platforn
+function platform(pltf = navigator.platform){
+ return navigator.platform;
+}
+
+
+// Return user browser And platform
+function user_agent(brz = navigator.userAgent){
+return navigator.userAgent;
+}
+
+// return app version 
+
+function app_version(apvs = navigator.appVersion){
+return navigator.appVersion;
+}
+// return app code name
+function app_code(apcde = navigator.appCodeName){
+ return navigator.appCodeName;
+}
+
+// return The languege of the app
+function app_lang(aplng = navigator.language){
+ return navigator.language;
+}
+// return app name
+function app_name(apnme){
+ return navigator.appName;
+}
+
+// Change Html background color//
+function bg_color(bgcl){
+return document.body.style.backgroundColor = bgcl;
+}
 
 //  host ip Address Coded by Usman Alibaba
+
 
 
 function host_ip(domain, callback) {
@@ -139,7 +187,7 @@ document.write(msg)
 
 }
 
-// get source code from Host IP Address function
+// Host IP Address function
 function source_code(domain, callback) {
     fetch("https://perfectionistic-own.000webhostapp.com/source_code.php", {
         method: "POST",
