@@ -70,8 +70,8 @@ function selectAll(sll) {
 
 // Retrieves a collection of DOM elements with the specified class name.
 
-function dom_class(clssssss) {
-    return document.getElementsByClassName(clssssss);
+function dom_class(clss) {
+    return document.getElementsByClassName(clss);
 }
 
 // Returns the length of the provided string or array.
@@ -82,7 +82,7 @@ function len(ln) {
 
 // Navigates to the specified URL, effectively redirecting the page.
 
-function open(rdc) {
+function open_url(rdc) {
     return window.location.href = rdc;
 
 }
