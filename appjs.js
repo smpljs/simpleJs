@@ -115,9 +115,9 @@ function error_msg(err = "Try again Something Went Wrong") {
 }
 
 
-/*function event(element, eventType, callback) {
+function event(element, eventType, callback) {
   element.addEventListener(eventType, callback);
-}*/
+}
 
 // remove event
 
@@ -325,7 +325,7 @@ return window.localStorage.removeItem(rmvi);
 
 // Clear All data in local storage
 
-function clear_item(cli = localStorage.clear(){
+function clear_item(cli = localStorage.clear()){
 
 return window.localStorage.clear();
 }
