@@ -329,3 +329,59 @@ function clear_item(cli = localStorage.clear()){
 
 return window.localStorage.clear();
 }
+
+// Function to check if the device is a mobile device
+function ismobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Function to check if the device is a tablet
+function istablet() {
+  // Check for iPad specifically
+  const isiPad = /iPad/i.test(navigator.userAgent);
+
+  // Check for Android tablets
+  const isAndroidTablet = /Android/i.test(navigator.userAgent) && /Tablet/i.test(navigator.userAgent);
+
+  return isiPad || isAndroidTablet;
+}
+
+
+// Function to get the current screen width
+function getscreenwidth() {
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+}
+
+// Function to determine the device type based on screen width
+function getdevicetype() {
+  const screenWidth = getscreenwidth();
+  
+  if (ismobile()) {
+    return 'Mobile';
+  } else if (istablet()) {
+    return 'Tablet';
+  } else if (screenWidth >= 768) {
+    return 'Desktop'; // Adjust the breakpoint as needed
+  } else {
+    return 'Unknown';
+  }
+}
+
+
+// Capitalize the first letter of a string
+function capitalize_f(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// Reverse a string
+function reverse_str(str) {
+  return str.split('').reverse().join('');
+}
+
+// Format a date as 'YYYY-MM-DD'
+function format(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
